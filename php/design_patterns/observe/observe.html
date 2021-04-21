@@ -1,0 +1,31 @@
+<html>
+<title>测试网页</title>
+<meta http-equiv="Content-Type" CONTENT="text/html;charset=utf-8">
+<head>
+    <style></style>
+    <script type="text/javascript">
+        function change() {
+            var sel = document.getElementsByTagName('select')[0];
+            if (sel.value == 'male') {
+                document.getElementById('content').style.backgroundColor = 'gray';
+            } else if (sel.value == 'female') {
+                document.getElementById('content').style.backgroundColor = 'pink';
+            }
+        }
+        /*
+        上面代码，如果需要新增一个区，就要修改change函数
+        那么，如果需要监听新增区，如果能不改原来代码，而只是增加
+         */
+    </script>
+<body>
+<h1>面向过程</h1>
+<select name="" id="" onchange="change()">
+    <option value="male">man</option>
+    <option value="female">wuman</option>
+</select>
+<div id="content">
+    内容
+</div>
+</body>
+</head>
+</html>

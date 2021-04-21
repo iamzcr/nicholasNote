@@ -1,0 +1,83 @@
+<html>
+<title>测试网页</title>
+<meta http-equiv="Content-Type" CONTENT="text/html;charset=utf-8">
+<head>
+    <style>
+        .content, .ad {
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+
+<body>
+<h1>面向过程</h1>
+
+<select name="" id="" onchange="change()">
+    <option value="male">man</option>
+    <option value="female">wuman</option>
+</select>
+<input type="button" value="观察study" onclick="t1()"/>
+<input type="button" value="不观察study" onclick="t2()"/>
+<div id="content">
+    内容
+</div>
+<div id="ad">
+    广告
+</div>
+<div id="study">
+    学习
+</div>
+</body>
+<script type="text/javascript">
+    var sel = document.getElementsByTagName('select')[0]; //被观察者
+    sel.observes = {};
+    sel.attach = function (key, obj) {
+        this.observes[key] = obj;
+    };
+    sel.detach = function (key) {
+        delete this.observes[key];
+    };
+    sel.onchange = sel.notify = function () {
+        for (var key in this.observes) {
+            this.observes[key].update(this)
+        }
+    };
+    //content观察者
+    var content = document.getElementById('content');
+
+    content.update = function (subject) {
+        if (subject.value == 'male') {
+            this.style.backgroundColor = 'gray';
+        } else {
+            this.style.backgroundColor = 'pink';
+        }
+    };
+    //ad观察者
+    var ad = document.getElementById('ad');
+    ad.update = function (subject) {
+        if (subject.value == 'male') {
+            this.style.backgroundColor = 'gray';
+        } else {
+            this.style.backgroundColor = 'pink';
+        }
+    };
+    //学习观察者
+    var study = document.getElementById('study');
+    study.update = function (subject) {
+        if (subject.value == 'male') {
+            this.style.backgroundColor = 'gray';
+        } else {
+            this.style.backgroundColor = 'green';
+        }
+    };
+    sel.attach('content', content);
+    sel.attach('ad', ad);
+    function t1() {
+        sel.attach('study', study);
+    }
+    function t2() {
+        sel.detach('study');
+    }
+</script>
+</head>
+</html>
