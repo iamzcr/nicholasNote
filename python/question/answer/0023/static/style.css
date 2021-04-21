@@ -1,0 +1,6 @@
+.warp{width: 960px;margin: 0 auto}
+.header{height: 50px;line-height: 50px; font-size: 24px;background-color: #004080;color: #ffffff}
+.form{background-color: #78b8f8}
+.footer{background-color:#004080;height: 50px;line-height: 50px;  }
+.message-content{background-color: #dbdbff}
+.del-msg{float: right;}

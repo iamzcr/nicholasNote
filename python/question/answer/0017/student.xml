@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<root>
+  <students>{
+    &quot;1&quot;:[&quot;das&quot;,150,120,100],
+    &quot;2&quot;:[&quot;dsa&quot;,90,99,95],
+    &quot;3&quot;:[&quot;dsada&quot;,60,66,68]
+}</students>
+</root>

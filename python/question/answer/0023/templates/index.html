@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>留言板</title>
+		<link href="{{ url_for('static', filename='style.css', _external=True )}}" rel="stylesheet">
+	</head>
+	<body>
+		<div class="warp">
+			<div class="header">
+				留言簿
+			</div>
+			<div class="form">
+					<form action="{{ url_for('add_msg') }}" method="post">
+						<p>请尽情留言：</p>
+						<p>姓名：<input type="text" name="username"/></p>
+						<p>内容：<textarea name="content"></textarea></p>
+						<p><input type="submit" value="submit"/></p>
+					</form>
+			</div>
+			<div class="mssage">
+				<p>留言历史信息</p>
+				 {% for msg in temp_list %}		  
+					<div>
+					<p class="message-content">{{msg.username}}  留言于：{{msg.add_time}} <a class="del-msg" href="{{ url_for('del_msg',msg_id=msg._id) }}">删除</a></p>
+					<p>{{msg.content}}</p>
+					</div>
+				 {% endfor %}
+			</div>
+			<div class="footer">
+				
+			</div>
+		<div>
+	</body>
+</html>

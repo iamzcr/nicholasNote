@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<root>
+  <citys>{
+    &quot;1&quot; : &quot;上海&quot;,
+    &quot;2&quot; : &quot;北京&quot;,
+    &quot;3&quot; : &quot;成都&quot;
+}</citys>
+</root>

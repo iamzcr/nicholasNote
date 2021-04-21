@@ -1,0 +1,8 @@
+库依赖
+flask
+pymongo
+
+数据库：mongodb
+数据库名：message
+集合：msg
+集合列：username content add_time
