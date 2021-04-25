@@ -1,0 +1,29 @@
+//变量
+@font16: 24px;
+@border: 2px * 5;
+body {
+  font-size: @font16;
+}
+
+//嵌套
+.header {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  a {
+    color: red;
+    &:hover {
+      color: blue
+    }
+  }
+}
+
+//运算
+@border: 2px * 5;
+.test {
+  width: 200px - 50;
+  height: 200px * 2;
+  font-size: (200px / 2rem);
+  border: @border solid deeppink;
+  background-color: #666 - #333;
+}
