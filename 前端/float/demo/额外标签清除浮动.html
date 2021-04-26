@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .header {
+            height: 50px;
+            background-color: #4c4c4c;
+        }
+
+        .banner {
+            background-color: #4c4c4c;
+            width: 980px;
+            height: 150px;
+            margin: 10px auto;
+        }
+
+        .box {
+            width: 980px;
+            height: 300px;
+            margin: 0 auto;
+            background-color: #4c4c4c;
+        }
+
+        .box li {
+            width: 236px;
+            height: 300px;
+            float: left;
+            margin-right: 12px;
+            background-color: coral;
+
+        }
+
+        .box .last-li {
+            margin-right: 0;
+        }
+
+        /*父盒子没设置高度，但是因为在子盒子最后一个div加了清除浮动，所以不影响布局，高度会随子盒子其中的一个高度变化而变化*/
+        .box-float {
+            width: 980px;
+            margin: 10px auto;
+            background-color: #4c4c4c;
+        }
+
+        .one, .two, .three, .four {
+            width: 236px;
+            height: 300px;
+            float: left;
+            margin-right: 12px;
+            background-color: coral;
+        }
+        .one{
+            height: 500px;
+        }
+        .box-float .four {
+            margin-right: 0;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .footer {
+            height: 200px;
+            background-color: #4c4c4c;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header"></div>
+<div class="banner"></div>
+<div class="box">
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li class="last-li"></li>
+    </ul>
+</div>
+<div class="box-float">
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="clear"></div>
+</div>
+<div class="footer"></div>
+</body>
+</html>
+
