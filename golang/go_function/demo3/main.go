@@ -1,3 +1,4 @@
+//匿名函数
 package main
 
 import "fmt"
