@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+
 	myArr := [...]int{1, 323, 3, 6, 7}
 	mySlice := myArr[1:3]
 	fmt.Printf("mySlice %v\n", mySlice)
