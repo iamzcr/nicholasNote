@@ -9,6 +9,7 @@ func main() {
 
 	//修改字符串
 	changeSlice := []byte(str)
+	fmt.Println(changeSlice)
 	changeSlice[0] = 'z'
 	str = string(changeSlice)
 	fmt.Printf("str=%v;str地址=%p\n", str, &str)
