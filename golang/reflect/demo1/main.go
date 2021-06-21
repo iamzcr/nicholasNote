@@ -33,7 +33,6 @@ func testReflect(r interface{}) {
 
 }
 func main() {
-	//定义int类型
 	stu := Student{
 		Name: "zcr",
 		Age:  11,
