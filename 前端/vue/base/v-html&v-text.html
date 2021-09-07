@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <!--v-html会将vue中的属性的值作为html元素来使用-->
+    <p v-html="content"></p>
+    <!--v-html会将vue中的属性的值只作为文本来使用-->
+    <p v-text="content"></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            content: "<h1>test</h1>"
+        }
+    })
+</script>
+</body>
+</html>

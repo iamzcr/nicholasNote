@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <p><input type="text" v-model="tags"></p>
+    <p>
+        <button @click="sub">减少</button>
+        <button @click="subOrder">额外减少</button>
+        {{ number }}
+        <button @click="add">增加</button>
+        <button @click="addOrder">额外增加</button>
+        <button @click="addOrderParam(5)">传参增加</button>
+    </p>
+    <p @mousemove="move">鼠标移动，<span @mousemove="stop">停止移动</span>，<span @mousemove.stop="stop">事件修饰符停止移动</span></p>
+    <p>x:{{x}},y:{{y}} </p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            number: 0,
+            tags: 1,
+            x: 0,
+            y: 0,
+        },
+        methods: {
+            add: function () {
+                this.number++
+            },
+            sub: function () {
+                this.number--
+            },
+            addOrder: function () {
+                this.number += parseInt(this.tags)
+            },
+            addOrderParam: function (number) {
+                this.number += number
+            },
+            subOrder: function () {
+                this.number -= parseInt(this.tags)
+
+            },
+            move: function (event) {
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            stop: function (event) {
+                //原生方法阻止事件冒泡，
+                event.stopPropagation();
+            }
+        }
+    })
+</script>
+</body>
+</html>

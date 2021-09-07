@@ -1,0 +1,1 @@
+boolean:占用一个字节，只有true和false

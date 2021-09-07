@@ -1,0 +1,2 @@
+关系运算符的结果都是boolean型，要么是true，要么是false
+instanceof：检查某个实例是否是某个类的对象

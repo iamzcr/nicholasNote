@@ -1,0 +1,44 @@
+<!--doc:https://cn.vuejs.org/v2/guide/events.html#%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div>{{ num }}</div>
+    <div v-on:click="method1">
+        <!-- 事件修饰符阻止事件冒泡，vue-->
+        <button v-on:click.stop="method">点击事件</button>
+        <button v-on:click.stop="method">点击事件</button>
+    </div>
+    <div>
+        <!-- 事件修饰符阻止跳转，vue-->
+        <a href="http://www.baidu.com" v-on:click.prevent="method2">点击事件</a>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            num: 0
+        },
+        methods: {
+            method1: function () {
+                this.num++;
+            },
+            method: function (event) {
+                //阻止事件冒泡，原生
+                // event.stopPropagation()
+            },
+            method2: function (event) {
+                //阻止跳转，原生
+                //event.preventDefault()
+            }
+        }
+    })
+</script>
+</body>
+</html>

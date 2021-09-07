@@ -1,0 +1,39 @@
+<!--doc:https://cn.vuejs.org/v2/guide/events.html#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div>
+        <form>
+            <!--(捕获“删除”和“退格”键)-->
+            <input type="text" v-model="username" @keyup.delete="clearData"></br>
+            <input type="text" v-model="password" @keyup.enter="onSumbit"></br>
+            <input type="button" value="提交" @click="onSumbit"></br>
+        </form>
+    </div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            username: "",
+            password: ""
+        },
+        methods: {
+            onSumbit: function () {
+                console.log(this.username, this.password)
+            },
+            clearData: function () {
+                this.username = ""
+            }
+        }
+    })
+</script>
+</body>
+</html>

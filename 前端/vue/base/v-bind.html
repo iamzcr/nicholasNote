@@ -1,0 +1,28 @@
+<!--差值表达式-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    {{link}}
+    <!--差值表达式不能作为标签属性的值部分-->
+    <a href="{{link}}">百度</a>
+    <!--用v-bind把vue的属性绑定到标签属性的值-->
+    <a v-bind:href="link">百度</a>
+    <!--用v-bind的简写把vue的属性绑定到标签属性的值-->
+    <a :href="link">百度(v-bind的简写)</a>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data: {
+            link: 'http://baidu.com'
+        }
+    })
+</script>
+</html>
