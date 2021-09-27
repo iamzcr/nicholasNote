@@ -7,7 +7,6 @@ public class Interface01 {
         Computer computer = new Computer();
         computer.work(phone);//把手机接入到计算机
         computer.work(camera);//把相机接入到计算机
-
     }
 }
 
